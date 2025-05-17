@@ -6,8 +6,8 @@ import javax.swing.*;
 
 public class PacMan extends JPanel implements ActionListener, KeyListener{
     //We are saying: “PacMan is a kind of JPanel.”
-    //You're not reinventing the wheel. You're taking a basic car (JPanel) and
-    // building your own custom sports ca (PacMan) on top of it.
+    //We are not reinventing the wheel. We are taking a basic car (JPanel) and
+    // building your own custom sports car (PacMan) on top of it.
 
 
     class Block{
@@ -84,6 +84,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
     private Image orangeGhostImage;
     private Image pinkGhostImage;
     private Image redGhostImage;
+    private Image cherryImage;
 
 
     private Image packmanUpImage;
@@ -100,30 +101,31 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
 
     private String[] tileMap = {
             "XXXXXXXXXXXXXXXXXXX",
-            "X        X        X",
+            "X   C    X    C   X",
             "X XX XXX X XXX XX X",
             "X                 X",
             "X XX X XXXXX X XX X",
-            "X    X       X    X",
+            "X C  X       X    X",
             "XXXX XXXX XXXX XXXX",
-            "OOOX X       X XOOO",
+            "OOOX X   C   X XOOO",
             "XXXX X XXrXX X XXXX",
-            "O       bpo       O",
+            "O C     bpo       O",
             "XXXX X XXXXX X XXXX",
             "OOOX X       X XOOO",
             "XXXX X XXXXX X XXXX",
-            "X        X        X",
+            "X    C   X   C    X",
             "X XX XXX X XXX XX X",
-            "X  X     P     X  X",
+            "X  X  C  P     X  X",
             "XX X X XXXXX X X XX",
             "X    X   X   X    X",
             "X XXXXXX X XXXXXX X",
-            "X                 X",
+            "XC       C        X",
             "XXXXXXXXXXXXXXXXXXX"
     };
     HashSet<Block>walls;
     HashSet<Block>foods;
     HashSet<Block>ghosts;
+    HashSet<Block>cherries;
     Block pacman;
 
     Timer gameLoop;
@@ -146,6 +148,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
         pinkGhostImage = new ImageIcon("src/images/pinkGhost.png").getImage();
         orangeGhostImage = new ImageIcon("src/images/orangeGhost.png").getImage();
         redGhostImage = new ImageIcon("src/images/redGhost.png").getImage();
+        cherryImage = new ImageIcon("src/images/cherry.png").getImage();
 
         packmanUpImage = new ImageIcon("src/images/pacmanUp.png").getImage();
         packmanDownImage = new ImageIcon("src/images/pacmanDown.png").getImage();
@@ -164,6 +167,7 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
         walls = new HashSet<Block>();
         foods = new HashSet<Block>();
         ghosts = new HashSet<Block>();
+        cherries = new HashSet<Block>();
 
         for(int r = 0; r < rowCount; r++){
             for(int c = 0; c < colCount; c++){
@@ -191,6 +195,10 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
                     Block ghost = new Block(redGhostImage, x, y, tileSize, tileSize);
                     ghosts.add(ghost);
                 }
+                else if (tileMapChar == 'C') {
+                    Block cherry = new Block(cherryImage, x, y, tileSize, tileSize);
+                    cherries.add(cherry);
+                }
                 else if(tileMapChar == 'P'){
                     pacman = new Block(packmanRightImage, x, y, tileSize, tileSize);
                 }
@@ -212,6 +220,9 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
          }
          for(Block wall : walls){
              g.drawImage(wall.image, wall.x, wall.y, wall.width, wall.height, null);
+         }
+         for(Block cherry : cherries){
+             g.drawImage(cherry.image, cherry.x, cherry.y, cherry.width, cherry.height, null);
          }
          g.setColor(Color.WHITE);
          for(Block food : foods){
@@ -280,7 +291,16 @@ public class PacMan extends JPanel implements ActionListener, KeyListener{
             }
         }
         foods.remove(foodEaten);
-        if(foods.isEmpty()){
+
+        Block cherryEaten = null;
+        for(Block cherry : cherries){
+            if(collision(pacman, cherry)){
+                cherryEaten = cherry;
+                score += 50;
+            }
+        }
+        cherries.remove(cherryEaten);
+        if(foods.isEmpty() && cherries.isEmpty()){
             loadMap();
             resetPositions();
         }
