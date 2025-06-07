@@ -9,7 +9,8 @@ A simplified version of the classic **PAC-MAN** game implemented using **Java Sw
 
 ## 🎮 Watch the Gameplay
 
-> [![Gameplay Demo](images/thumbnail.png)](https://github.com/shreyashgaurav/Packman/blob/master/Demo1.mp4)
+![Gameplay Demo](https://github.com/shreyashgaurav/Packman/blob/master/Demo11-ezgif.com-optimize.gif)
+
 
 
 ---
@@ -41,22 +42,6 @@ A simplified version of the classic **PAC-MAN** game implemented using **Java Sw
 - Any Java-compatible IDE (IntelliJ, Eclipse, VSCode, etc.)
 
 ### Project Structure
-📁 pacman-java/
-│
-├── src/
-│ ├── App.java
-│ └── PacMan.java
-│
-├── src/images/
-│ ├── wall.png
-│ ├── blueGhost.png
-│ ├── orangeGhost.png
-│ ├── pinkGhost.png
-│ ├── redGhost.png
-│ ├── cherry.png
-│ ├── pacmanUp.png
-│ ├── pacmanDown.png
-│ ├── pacmanLeft.png
-│ └── pacmanRight.png
-│
-└── README.md
+![image](https://github.com/user-attachments/assets/a05d6496-d64e-4db3-ae15-cf46a3ace548)
+
+
