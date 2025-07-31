@@ -1,6 +1,6 @@
 # 🟡 PAC-MAN Java Edition
 
-A simplified version of the classic **PAC-MAN** game implemented using **Java Swing**.
+A version of the classic **PAC-MAN** game implemented using **Java**.
 
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/shreyashgaurav/Packman)
 ![License](https://img.shields.io/github/license/shreyashgaurav/Packman)
@@ -15,7 +15,7 @@ A simplified version of the classic **PAC-MAN** game implemented using **Java Sw
 
 ---
 
-## 🧩 Features
+## Features
 
 - Classic tile-based PAC-MAN gameplay
 - Multiple ghost types with basic movement
@@ -26,7 +26,7 @@ A simplified version of the classic **PAC-MAN** game implemented using **Java Sw
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - Java
 - Java Swing (for GUI)
@@ -34,7 +34,7 @@ A simplified version of the classic **PAC-MAN** game implemented using **Java Sw
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
