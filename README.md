@@ -18,7 +18,7 @@ A simplified version of the classic **PAC-MAN** game implemented using **Java Sw
 ## 🧩 Features
 
 - Classic tile-based PAC-MAN gameplay
-- Multiple ghost types with basic AI movement
+- Multiple ghost types with basic movement
 - Score system and cherry pickups
 - Life tracking and reset on game over
 - Full keyboard controls with responsive movement
