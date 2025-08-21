@@ -1,6 +1,6 @@
-# 🟡 PAC-MAN Java Edition
+# 🟡 PAC-MAN
 
-A version of the classic **PAC-MAN** game implemented using **Java**.
+This is a  version of the classic **PAC-MAN** game implemented using **Java**.
 
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/shreyashgaurav/Packman)
 ![License](https://img.shields.io/github/license/shreyashgaurav/Packman)
