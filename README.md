@@ -33,8 +33,11 @@ A version of the classic **PAC-MAN** game implemented using **Java**.
 - `javax.swing.Timer` for game loop
 
 ---
+## Architecture
+<img width="512" height="520" alt="image" src="https://github.com/user-attachments/assets/5ef26f48-b217-4bbe-bfde-7bef29a87eef" />
 
-## Getting Started
+
+## Want to Run on your System? Follow these steps:
 
 ### Prerequisites
 
@@ -44,4 +47,5 @@ A version of the classic **PAC-MAN** game implemented using **Java**.
 ### Project Structure
 ![image](https://github.com/user-attachments/assets/a05d6496-d64e-4db3-ae15-cf46a3ace548)
 
+-Run App.java
 
