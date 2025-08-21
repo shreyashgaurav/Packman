@@ -41,7 +41,7 @@ This is a  version of the classic **PAC-MAN** game implemented using **Java**.
 
 ### Prerequisites
 
-- Java JDK (11 or higher recommended)
+- Java JDK
 - Any Java-compatible IDE (IntelliJ, Eclipse, VSCode, etc.)
 
 ### Project Structure
